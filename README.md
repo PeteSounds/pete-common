@@ -33,6 +33,8 @@ source of truth and are immutable (never re-tag; bump the version instead).
 
 - `pete_common.jsonio` — `load_json` / `write_json` (atomic)
 - `pete_common.urls` — `BASE_PATH`-aware `url()` / `url_for()` for Caddy subpaths
+- `pete_common.admin` — shared admin auth: `enable_admin(app, password, open_paths=…, open_prefixes=…, mode="gate"|"open")`, `@require_admin`, `csrf_field()`/`@csrf_protect`, fleet SSO via `sso_secret`
+- `pete_common.config` — `load_shared(app_root, app_name)`: sibling `fleet.json` (outside every repo → can't be committed) for fleet-wide secrets like `admin_password`/`sso_secret`; `apps.<name>` for per-app shared overrides
 
 ## Rules
 
